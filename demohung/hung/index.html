@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="container mt-5">
+    <!-- Navbar -->
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="lp-nav-link nav-link active" aria-current="page" href="#">My Learning Path</a>
+      </li>
+      <li class="nav-item">
+        <a class="lp-nav-link nav-link" href="#">Training Course Details</a>
+      </li>
+      <li class="nav-item">
+        <a class="lp-nav-link nav-link" href="#">Cerificate</a>
+      </li>
+      <li class="nav-item">
+        <a class="lp-nav-link nav-link" href="roadmaps.html">Roadmaps</a>
+      </li>
+    </ul>
+
+    <!-- Gray info section -->
+    <h2 class="lp-path-role-heading">My learning path role</h2>
+    <div class="p-4 lp-info">
+      <h2 class="lp-info-heading">My information</h2>
+      <div class="d-flex align-items-center">
+        <div class="lp-info__image-wrapper">
+          <img src="https://i.pinimg.com/736x/52/bf/6c/52bf6cad0ff218c74e29fee5d62da7ac.jpg" alt="" />
+        </div>
+        <div class="d-flex">
+          <div class="d-flex flex-column">
+            <div class="d-flex mb-3">
+              <div class="lp-info__title" style="min-width: 110px">
+                Employee Code
+              </div>
+              <div class="lp-info__value">V00992</div>
+            </div>
+            <div class="d-flex">
+              <div class="lp-info__title" style="min-width: 110px">
+                Full name
+              </div>
+              <div class="lp-info__value">V00992</div>
+            </div>
+          </div>
+          <div class="d-flex flex-column" style="padding-left: 80px">
+            <div class="d-flex mb-3">
+              <div class="lp-info__title" style="min-width: 110px">
+                Employee Code
+              </div>
+              <div class="lp-info__value">V00992</div>
+            </div>
+            <div class="d-flex">
+              <div class="lp-info__title" style="min-width: 110px">
+                Full name
+              </div>
+              <div class="lp-info__value">V00992</div>
+            </div>
+          </div>
+          <div class="d-flex flex-column" style="padding-left: 80px">
+            <div class="d-flex mb-3">
+              <div class="lp-info__title" style="min-width: 110px">
+                Employee Code
+              </div>
+              <div class="lp-info__value">V00992</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flow chart section -->
+    <div class="mt-5">
+      <div class="flow-chart-bg">
+        <div class="flow-chart-content">
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="fc-circle fc-purple fc-circle--large">
+              <div class="fc-detail">Senior</div>
+            </div>
+            <div class="fc-v-line" style="
+                  background-color: #9702fe;
+                  filter: drop-shadow(0px 0px 4px #9702fe);
+                "></div>
+            <div class="fc-horizon position-relative">
+              <div class="fc-h-left">
+                <div onclick="openNav()" class="fc-hexagon">
+                  <span>Certificate</span>
+                  <div class="fc-hex-progress">1/5</div>
+                </div>
+              </div>
+              <div class="fc-h-line left" style="
+                    background-color: #03cad6;
+                    filter: drop-shadow(0px 0px 4px #03cad6);
+                  "></div>
+              <div class="fc-circle fc-blue--fill fc-circle--medium">
+                <div class="fc-detail">Middle <br />Junior</div>
+              </div>
+              <div class="fc-h-line right" style="
+                    background-color: #03cad6;
+                    filter: drop-shadow(0px 0px 4px #03cad6);
+                  "></div>
+              <div class="fc-h-right">
+                <div class="fc-hexagon">
+                  <span>Course</span>
+                  <div class="fc-hex-progress">2/5</div>
+                </div>
+              </div>
+            </div>
+            <div class="fc-v-line" style="
+                  background-color: #115ea3;
+                  filter: drop-shadow(0px 0px 4px #115ea3);
+                "></div>
+            <div class="fc-circle fc-blue fc-circle--medium">
+              <div class="fc-detail">Junior</div>
+            </div>
+            <div class="fc-v-line" style="
+                  background-color: #115ea3;
+                  filter: drop-shadow(0px 0px 4px #115ea3);
+                "></div>
+            <div class="fc-circle fc-blue fc-circle--medium">
+              <div class="fc-detail">Fresher</div>
+            </div>
+            <div class="fc-v-line" style="
+                  background-color: #115ea3;
+                  filter: drop-shadow(0px 0px 4px #115ea3);
+                "></div>
+            <div class="fc-circle fc-blue fc-circle--medium">
+              <div class="fc-detail">You</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The overlay -->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+  <script src="sidenav.js"></script>
+</body>
+
+</html>
