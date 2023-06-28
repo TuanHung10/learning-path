@@ -1,10 +1,34 @@
+window.addEventListener("click", (event) => {
+  handleClickOutsideNav(event);
+});
+
 function openNav() {
-    document.getElementById("mySidenav").style.width = "400px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  const overlayEle = document.querySelector(".overlay");
+
+  document.getElementById("mySidenav").style.width = "400px";
+  overlayEle.classList.toggle("active");
+  setTimeout(() => {
+    overlayEle.dataset.status = "active";
+  }, 200);
 }
 
-
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.body.style.backgroundColor = "white";
+  const overlayEle = document.querySelector(".overlay");
+
+  document.getElementById("mySidenav").style.width = "0";
+  overlayEle.classList.toggle("active");
+  overlayEle.removeAttribute("data-status");
+}
+
+function handleClickOutsideNav(event) {
+  const sideNav = document.querySelector("#mySidenav");
+  const overlay = document.querySelector(".overlay");
+
+  if (
+    !sideNav.contains(event.target) &&
+    overlay.classList.contains("active") &&
+    overlay.dataset.status === "active"
+  ) {
+    closeNav();
+  }
 }
