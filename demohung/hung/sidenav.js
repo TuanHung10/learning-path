@@ -2,10 +2,10 @@ window.addEventListener("click", (event) => {
   handleClickOutsideNav(event);
 });
 
-function openNav() {
+function openNav(id) {
   const overlayEle = document.querySelector(".overlay");
 
-  document.getElementById("mySidenav").style.width = "400px";
+  document.getElementById(id).classList.add("show");
   overlayEle.classList.toggle("active");
   setTimeout(() => {
     overlayEle.dataset.status = "active";
@@ -14,18 +14,29 @@ function openNav() {
 
 function closeNav() {
   const overlayEle = document.querySelector(".overlay");
+  const leftNav = document.getElementById("leftNav");
+  const rightNav = document.getElementById("rightNav");
 
-  document.getElementById("mySidenav").style.width = "0";
+  if (leftNav.classList.contains("show")) {
+    leftNav.classList.remove("show");
+  }
+
+  if (rightNav.classList.contains("show")) {
+    rightNav.classList.remove("show");
+  }
+
   overlayEle.classList.toggle("active");
   overlayEle.removeAttribute("data-status");
 }
 
 function handleClickOutsideNav(event) {
-  const sideNav = document.querySelector("#mySidenav");
+  const leftSideNav = document.querySelector(".sidenav.left.show");
+  const rightSideNav = document.querySelector(".sidenav.right.show");
   const overlay = document.querySelector(".overlay");
 
   if (
-    !sideNav.contains(event.target) &&
+    ((leftSideNav && !leftSideNav.contains(event.target)) ||
+      (rightSideNav && !rightSideNav.contains(event.target))) &&
     overlay.classList.contains("active") &&
     overlay.dataset.status === "active"
   ) {

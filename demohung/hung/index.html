@@ -110,7 +110,7 @@
               ></div>
               <div class="fc-horizon position-relative">
                 <div class="fc-h-left">
-                  <div onclick="openNav()" class="fc-hexagon">
+                  <div onclick="openNav('leftNav')" class="fc-hexagon">
                     <span>Certificate</span>
                     <div class="fc-hex-progress">1/5</div>
                   </div>
@@ -133,7 +133,7 @@
                   "
                 ></div>
                 <div class="fc-h-right">
-                  <div class="fc-hexagon">
+                  <div onclick="openNav('rightNav')" class="fc-hexagon">
                     <span>Course</span>
                     <div class="fc-hex-progress">2/5</div>
                   </div>
@@ -175,15 +175,27 @@
       </div>
     </div>
 
-    <!-- The overlay -->
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-        >&times;</a
-      >
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
+    <!-- Navbar -->
+    <div id="leftNav" class="sidenav left">
+      <div class="d-flex justify-content-end">
+        <div class="closebtn" onclick="closeNav()">
+          <img src="./assets/close.svg" alt="Close button" />
+        </div>
+      </div>
+      <div class="nav-menu">
+        <h4 class="nav-title">Level Middle - Certificate</h4>
+      </div>
+    </div>
+
+    <div id="rightNav" class="sidenav right">
+      <div class="d-flex justify-content-start">
+        <div class="closebtn" onclick="closeNav()">
+          <img src="./assets/close.svg" alt="Close button" />
+        </div>
+      </div>
+      <div class="nav-menu">
+        <h4 class="nav-title">Level Middle - Certificate</h4>
+      </div>
     </div>
     <script src="sidenav.js"></script>
   </body>
