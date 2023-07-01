@@ -1,3 +1,5 @@
+handleToggleVerticalInfo();
+
 window.addEventListener("click", (event) => {
   handleClickOutsideNav(event);
 });
@@ -41,5 +43,27 @@ function handleClickOutsideNav(event) {
     overlay.dataset.status === "active"
   ) {
     closeNav();
+  }
+}
+
+function handleToggleVerticalInfo() {
+  const chartElements = document.querySelectorAll(".fc-horizon .main");
+
+  console.log(chartElements);
+
+  if (chartElements.length > 0) {
+    for (let i = 0; i < chartElements.length; i++) {
+      chartElements[i].addEventListener("click", (event) => {
+        const parentEle = chartElements[i].parentElement;
+        parentEle.classList.toggle("show");
+
+        for (let j = 0; j < chartElements.length; j++) {
+          const parentEle = chartElements[j].parentElement;
+          if (i !== j) {
+            parentEle.classList.remove("show");
+          }
+        }
+      });
+    }
   }
 }

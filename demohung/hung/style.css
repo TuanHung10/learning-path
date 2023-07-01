@@ -161,32 +161,36 @@
   position: relative;
 }
 
-.fc-h-left {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: calc(100% + 80px);
+.fc-horizon.show .fc-vertical {
+  max-width: 200px;
+  opacity: 1;
 }
 
-.fc-h-line.left {
+.fc-vertical {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  max-width: 0%;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-width 0.5s, opacity 0.3s;
+}
+
+.fc-vertical.left {
   right: 100%;
 }
 
-.fc-h-right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: calc(100% + 80px);
+.fc-vertical.right {
+  left: 100%;
 }
 
 .fc-h-line.right {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 100%;
+  left: 100%; */
 }
 
 .fc-hexagon {
