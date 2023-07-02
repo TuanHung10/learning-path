@@ -49,8 +49,6 @@ function handleClickOutsideNav(event) {
 function handleToggleVerticalInfo() {
   const chartElements = document.querySelectorAll(".fc-horizon .main");
 
-  console.log(chartElements);
-
   if (chartElements.length > 0) {
     for (let i = 0; i < chartElements.length; i++) {
       chartElements[i].addEventListener("click", (event) => {
