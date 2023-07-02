@@ -8,6 +8,7 @@ function openNav(id) {
   const overlayEle = document.querySelector(".overlay");
 
   document.getElementById(id).classList.add("show");
+  document.getElementsByTagName("body")[0].style.overflowY = "hidden";
   overlayEle.classList.toggle("active");
   setTimeout(() => {
     overlayEle.dataset.status = "active";
@@ -27,6 +28,7 @@ function closeNav() {
     rightNav.classList.remove("show");
   }
 
+  document.getElementsByTagName("body")[0].style.overflowY = "auto";
   overlayEle.classList.toggle("active");
   overlayEle.removeAttribute("data-status");
 }
