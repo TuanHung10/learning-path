@@ -59,10 +59,25 @@ document.addEventListener('DOMContentLoaded', function () {
         firstDay: 1,
         expandRows: true,
         events: mockup.map(event => ({
-            title: `${event.title} - ${event.startTime} to ${event.endTime} @ ${event.location}`,
+            title: `${event.title}`,
             start: event.date + 'T' + event.startTime + ':00',
-            end: event.date + 'T' + event.endTime + ':00'
+            end: event.date + 'T' + event.endTime + ':00',
+            display: 'block',
+            backgroundColor: '#e5f4e9',
+            textColor: '#000',
+            location: event.location
         })),
+        eventContent: function (arg) {
+          var div = document.createElement('div');
+          div.classList.add('event-content')
+          div.innerHTML = `
+            <div class="event-title">${arg.event.title}</div>
+           <div>
+           <div class="custom-event event-time"><div class='icon'></div>${arg.event.start.toTimeString().substring(0, 5)} - ${arg.event.end.toTimeString().substring(0, 5)}</div>
+           <div class="custom-event event-location"><div class='icon'></div>${arg.event.extendedProps.location}</div></div>
+          `;
+          return { domNodes: [div] };
+        },
         datesSet: function (info) {
             let viewName = info.view.type;
             let titleElement = calendarEl.querySelector('.fc-toolbar-title');
@@ -145,8 +160,8 @@ const mockup = [
     {
         title: 'Training Session',
         date: '2023-10-25',
-        startTime: '14:00',
-        endTime: '17:00',
+        startTime: '15:00',
+        endTime: '18:00',
         location: 'Training Center'
     },
     {
