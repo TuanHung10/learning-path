@@ -12,6 +12,7 @@ body {
   margin: 0;
   width: 100%;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 #calendar {
@@ -232,22 +233,6 @@ body {
   background-color: #3F86F5;
 }
 
-/* .fc-daygrid-event-harness::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  background: #2FAA51;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  z-index: -1;
-} */
-
 .fc-daygrid-block-event {
   width: 100%;
   border: none !important;
@@ -327,15 +312,16 @@ body {
 /* Layout */
 .wrapper {
   display: flex;
+  min-height: 100vh;
 }
 
-#calendar {
+.calendar-container {
   flex: 1;
 }
 
 .right-content {
   max-width: 450px;
-  width: 20%;
+  width: 100%;
   padding: 12px 16px 0 38px;
   background-color: #F5F5F5;
 }
@@ -407,7 +393,13 @@ body {
   line-height: 22px;
 }
 
+.event-details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .event-details>div {
+  width: 50%;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -439,7 +431,6 @@ body {
   appearance: none;
   width: 24px;
   height: 24px;
-  background-color: #FFFFFF;
   position: relative;
   outline: none;
   cursor: pointer;
@@ -457,4 +448,48 @@ body {
 
 #defaultCheck3:checked {
   content: url('./image/yellow-checkbox.svg');
+}
+
+.fc-timegrid-cols .fc-daygrid-event-harness,
+.fc-timegrid-cols .fc-timegrid-event-harness {
+  margin: 0;
+} 
+
+.fc-timegrid-cols .fc-v-event {
+  border: none !important;
+}
+
+.fc-timeGridDay-view .fc-timegrid-col-events {
+  margin-right: 0px !important;
+}
+
+.fc-timeGridDay-view .fc-v-event {
+  background-image: url('./image/img1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.fc-timeGridDay-view .fc-v-event::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(173,255,47, 0.5);
+}
+
+.fc-timeGridDay-view .fc-daygrid-event-harness::after,
+.fc-timeGridDay-view .fc-timegrid-event-harness::after {
+  content: '';
+  position: absolute;
+  background-color: transparent;
+  border-radius: 3px;
+  top: 0;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.fc-timeGridDay-view .fc-daygrid-event-harness:hover::after,
+.fc-timeGridDay-view .fc-timegrid-event-harness:hover::after {
+  background-color: #3F86F5;
 }

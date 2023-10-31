@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
+        height: '100%',
         initialView: 'dayGridMonth',
         dayMaxEventRows: true,
         slotLabelFormat: {
@@ -190,7 +191,7 @@ const mockup = [
         title: 'Workshop',
         date: '2023-10-27',
         startTime: '13:00',
-        endTime: '15:00',
+        endTime: '18:00',
         location: 'Workshop Hall'
     }
 ];
