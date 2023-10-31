@@ -84,7 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (titleElement) {
                 switch (viewName) {
                     case 'dayGridMonth':
-                        titleElement.textContent = '(' + info.startStr.split('-')[1] + ', ' + info.startStr.split('-')[0] + ')';
+                        let currentMonthDate = calendar.getDate();
+                        titleElement.textContent = '(' + currentMonthDate.toLocaleString('en-US', { month: 'long' }) + ', ' + currentMonthDate.getFullYear() + ')';
                         break;
                     case 'timeGridWeek':
                         let startDate = new Date(info.startStr);
