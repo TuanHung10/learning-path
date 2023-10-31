@@ -8,17 +8,17 @@ document.addEventListener('DOMContentLoaded', function () {
             minute: '2-digit',
             omitZeroMinute: false,
             meridiem: 'short'
-          },
+        },
         views: {
-            timeGridDay: { 
+            timeGridDay: {
                 dayHeaderFormat: { weekday: 'long', month: 'numeric', day: 'numeric' },
-                
+
             },
             timeGridWeek: {
                 dayHeaderFormat: { weekday: 'long', month: 'numeric', day: 'numeric' }
             },
             dayGridMonth: {
-                dayHeaderFormat: {weekday: 'long'},
+                dayHeaderFormat: { weekday: 'long' },
                 dayMaxEventRows: 3
             }
         },
@@ -68,15 +68,15 @@ document.addEventListener('DOMContentLoaded', function () {
             location: event.location
         })),
         eventContent: function (arg) {
-          var div = document.createElement('div');
-          div.classList.add('event-content')
-          div.innerHTML = `
+            var div = document.createElement('div');
+            div.classList.add('event-content')
+            div.innerHTML = `
             <div class="event-title">${arg.event.title}</div>
            <div>
            <div class="custom-event event-time"><div class='icon'></div>${arg.event.start.toTimeString().substring(0, 5)} - ${arg.event.end.toTimeString().substring(0, 5)}</div>
            <div class="custom-event event-location"><div class='icon'></div>${arg.event.extendedProps.location}</div></div>
           `;
-          return { domNodes: [div] };
+            return { domNodes: [div] };
         },
         datesSet: function (info) {
             let viewName = info.view.type;
