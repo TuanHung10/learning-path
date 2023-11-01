@@ -105,14 +105,24 @@ document.addEventListener('DOMContentLoaded', function () {
     calendar.render();
 
 
-    // var smallCalendarEl = document.getElementById('small-calendar');
-    // var smallCalendar = new FullCalendar.Calendar(smallCalendarEl, {
-    //     initialView: 'dayGridMonth',
-    //     height: 'auto', // Adjusts the height automatically based on the number of weeks in the month
-    //     headerToolbar: false, // Hides the header
-    //     dayCellContent: function (e) { e.dayNumberText = e.dayNumberText.replace(/(\d+)/, '<span class="small-day-number">$1</span>'); }
-    // });
-    // smallCalendar.render();
+    var smallCalendarEl = document.getElementById('small-calendar');
+    var smallCalendar = new FullCalendar.Calendar(smallCalendarEl, {
+        initialView: 'dayGridMonth',
+        firstDay: 1,
+        height: 'auto',
+        // dayCellContent: function (e) { e.dayNumberText = e.dayNumberText.replace(/(\d+)/, '<span class="small-day-number">$1</span>'); },
+        themeSystem: 'bootstrap',
+        views: {},
+        headerToolbar: {
+            start: 'prev',
+            center: 'title',
+            end: 'next'
+        },
+        titleFormat:{
+            month: 'long',
+        },
+    });
+    smallCalendar.render();
 });
 
 
@@ -189,9 +199,23 @@ const mockup = [
     },
     {
         title: 'Workshop',
-        date: '2023-10-27',
-        startTime: '13:00',
+        date: '2023-11-01',
+        startTime: '11:00',
         endTime: '18:00',
+        location: 'Workshop Hall'
+    },
+    {
+        title: 'Workshop',
+        date: '2023-11-01',
+        startTime: '13:00',
+        endTime: '16:00',
+        location: 'Workshop Hall'
+    },
+    {
+        title: 'Workshop',
+        date: '2023-11-01',
+        startTime: '12:00',
+        endTime: '15:00',
         location: 'Workshop Hall'
     }
 ];

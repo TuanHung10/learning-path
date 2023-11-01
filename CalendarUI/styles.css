@@ -25,13 +25,7 @@ body {
 }
 
 .right-calendar {
-  position: fixed;
-  top: 20px;
-  right: 20px;
   width: 250px;
-  /* Adjust as per your requirements */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
 }
 
 /* Adjust the calendar header */
@@ -45,7 +39,7 @@ body {
 /* Style the title (Month and Year) */
 .fc-toolbar-title {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 22px;
   position: relative;
 }
@@ -258,6 +252,15 @@ body {
   background-color: #f0f0f0 !important;
 }
 
+.right-calendar .fc-day-today {
+  background-color: #4086F5 !important;
+}
+
+.fc-scroller {
+  overflow: unset !important;
+  background: #f0f0f0;
+}
+
 .fc-timeGridWeek-view .fc-daygrid-body-unbalanced,
 .fc-timeGridDay-view .fc-daygrid-body-unbalanced {
   display: none;
@@ -330,7 +333,7 @@ body {
   padding-bottom: 12px;
 }
 
-.small-calendar {
+.right-small-calendar {
   padding-bottom: 12px;
 }
 
@@ -454,7 +457,7 @@ body {
 .fc-timegrid-cols .fc-daygrid-event-harness,
 .fc-timegrid-cols .fc-timegrid-event-harness {
   margin: 0;
-} 
+}
 
 .fc-timegrid-cols .fc-v-event {
   border: none !important;
@@ -474,7 +477,8 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(173,255,47, 0.5);
+  border-radius: 8px;
+  background-color: rgba(173, 255, 47, 0.5);
 }
 
 .fc-timeGridDay-view .fc-daygrid-event-harness::after,
@@ -493,4 +497,11 @@ body {
 .fc-timeGridDay-view .fc-daygrid-event-harness:hover::after,
 .fc-timeGridDay-view .fc-timegrid-event-harness:hover::after {
   background-color: #3F86F5;
+}
+
+.right-calendar .fc-toolbar-title {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  
 }
