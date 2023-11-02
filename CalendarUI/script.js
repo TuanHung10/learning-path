@@ -1,9 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
+    function dateHasMultipleEvents(date, events) {
+        let count = 0;
+        for (let i = 0; i < events.length; i++) {
+            if (events[i].start.toDateString() === date.toDateString()) {
+                count++;
+                if (count > 1) return true;
+            }
+        }
+        return false;
+    }
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
         height: '100%',
+        expandRows: true,
         initialView: 'dayGridMonth',
-        dayMaxEventRows: true,
         slotLabelFormat: {
             hour: 'numeric',
             minute: '2-digit',
@@ -20,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             dayGridMonth: {
                 dayHeaderFormat: { weekday: 'long' },
-                dayMaxEventRows: 3
+                dayMaxEvents: 2
             }
         },
         themeSystem: 'bootstrap',
@@ -52,13 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             year: 'numeric',
             month: 'long',
         },
-        // datesSet: function (info) {
-        //     var title = document.querySelector('.fc-toolbar-title').textContent;
-        //     var modifiedTitle = `(${title})`;
-        //     document.querySelector('.fc-toolbar-title').textContent = modifiedTitle;
-        // },
         firstDay: 1,
-        expandRows: true,
         events: mockup.map(event => ({
             title: `${event.title}`,
             start: event.date + 'T' + event.startTime + ':00',
@@ -70,13 +74,23 @@ document.addEventListener('DOMContentLoaded', function () {
         })),
         eventContent: function (arg) {
             var div = document.createElement('div');
-            div.classList.add('event-content')
-            div.innerHTML = `
-            <div class="event-title">${arg.event.title}</div>
-           <div>
-           <div class="custom-event event-time"><div class='icon'></div>${arg.event.start.toTimeString().substring(0, 5)} - ${arg.event.end.toTimeString().substring(0, 5)}</div>
-           <div class="custom-event event-location"><div class='icon'></div>${arg.event.extendedProps.location}</div></div>
-          `;
+            div.classList.add('event-content');
+
+            // Check if the current view is 'dayGridMonth' and if the event's date has multiple events
+            if (arg.view.type === 'dayGridMonth' && dateHasMultipleEvents(arg.event.start, arg.view.calendar.getEvents())) {
+                // If conditions are met, just render the event title
+                div.innerHTML = `<div class="event-title">${arg.event.title}</div>`;
+            } else {
+                // Else, render the event title, time, and location
+                div.innerHTML = `
+                <div class="event-title">${arg.event.title}</div>
+                <div>
+                    <div class="custom-event event-time"><div class='icon'></div>${arg.event.start.toTimeString().substring(0, 5)} - ${arg.event.end.toTimeString().substring(0, 5)}</div>
+                    <div class="custom-event event-location"><div class='icon'></div>${arg.event.extendedProps.location}</div>
+                </div>
+                `;
+            }
+
             return { domNodes: [div] };
         },
         datesSet: function (info) {
@@ -118,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
             center: 'title',
             end: 'next'
         },
-        titleFormat:{
+        titleFormat: {
             month: 'long',
         },
     });
