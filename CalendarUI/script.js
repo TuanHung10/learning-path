@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
             month: 'long',
         },
         firstDay: 1,
+        dayPopoverFormat: { weekday: 'long', month: 'long', day: 'numeric' },
         events: mockup.map(event => ({
             title: `${event.title}`,
             start: event.date + 'T' + event.startTime + ':00',
