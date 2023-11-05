@@ -24,9 +24,9 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.right-calendar {
+/* .right-calendar {
   width: 250px;
-}
+} */
 
 /* Adjust the calendar header */
 .fc-header-toolbar {
@@ -38,7 +38,8 @@ body {
 
 /* Style the title (Month and Year) */
 .fc-toolbar-title {
-  font-size: 20px;
+  font-size: 20px !important;
+  padding-left: 12px;
   font-weight: 600;
   line-height: 22px;
   position: relative;
@@ -253,7 +254,12 @@ body {
 }
 
 .right-calendar .fc-day-today {
-  background-color: #4086F5 !important;
+  background-color: #0050AE !important;
+  border-radius: 8px;
+}
+
+.right-calendar .fc-day-today > * {
+  color: #fff !important;
 }
 
 .fc-scroller {
@@ -364,15 +370,16 @@ body {
 
 .instructor-image {
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 
 .instructor-name {
   font-weight: 600;
   font-size: 13px;
-  margin-bottom: 10px;
   line-height: 22px;
+  color: #212529;
+  margin: 0;
 }
 
 .event-description {
@@ -433,25 +440,43 @@ body {
 /* Hide the default checkbox */
 .form-check-input {
   appearance: none;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   position: relative;
   outline: none;
   cursor: pointer;
   margin-right: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+}
+
+.form-check-input#defaultCheck1 {
+  border-color: #30AA51;
+}
+
+.form-check-input#defaultCheck2 {
+  border-color: #4086F5;
+}
+
+.form-check-input#defaultCheck3 {
+  border-color: #FCBD01;
 }
 
 
 #defaultCheck1:checked {
-  content: url('./image/green-checkbox.svg');
+  content: url('./image/tick.svg');
+  background: #30AA51;
 }
 
 #defaultCheck2:checked {
-  content: url('./image/blue-checkbox.svg');
+  content: url('./image/tick.svg');
+  background-color: #4086F5;
 }
 
 #defaultCheck3:checked {
-  content: url('./image/yellow-checkbox.svg');
+  content: url('./image/tick.svg');
+  background-color: #FCBD01;
 }
 
 .fc-timegrid-cols .fc-daygrid-event-harness,
@@ -504,4 +529,100 @@ body {
   font-weight: 400;
   line-height: 22px;
   
+}
+
+/* Style custom button wrapper */
+.header-start-wrapper {
+  display: flex;
+  align-items: center;  
+}
+
+/* Right content */
+.input-group {
+  margin-bottom: 12px;
+}
+
+#small-calendar {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+#small-calendar .fc-header-toolbar {
+  background-color: #fff;
+  margin-bottom: 0 !important;
+}
+
+#small-calendar .fc-dayGridMonth-view .fc-col-header-cell {
+  background-color: white;
+}
+
+#small-calendar .fc-dayGridMonth-view .fc-scrollgrid  {
+  border: none !important;
+}
+
+#small-calendar .fc-dayGridMonth-view .fc-day {
+  border: none !important;
+}
+
+#small-calendar .fc-dayGridMonth-view .fc-daygrid-day-events {
+  min-height: auto;
+  margin: 0 !important;
+}
+
+#small-calendar .fc-dayGridMonth-view .fc-daygrid-day-top {
+  justify-content: center;
+}
+
+#small-calendar .fc-dayGridMonth-view td,
+#small-calendar .fc-dayGridMonth-view th {
+  border: none !important;
+}
+
+#small-calendar .fc-dayGridMonth-view .fc-daygrid-day-number {
+  padding: 10px !important;
+  border-radius: 8px;
+}
+
+#small-calendar .presentation {
+  border: none !important;
+}
+
+/* Info */
+.info-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #F5F5F5;
+  padding: 16px;
+  width: 100%;
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.info-text {
+  margin-left: 16px;
+}
+
+.info-text .class {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #4086F5;
+  margin-bottom: 0;
+}
+
+.event-card-info {
+  padding: 12px 16px;
+  gap: 16px;
+}
+
+.event-description {
+  width: 100%;
+  margin: 0;
+  padding-top: 8px;
+}
+
+.join-btn {
+  margin: 0;
+  box-shadow: 4px 4px 8px 0px rgba(64, 134, 245, 0.50)
 }

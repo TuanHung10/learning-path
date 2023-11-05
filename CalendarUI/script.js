@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         break;
                 }
             }
-        }
+        },
     });
     calendar.render();
 
@@ -137,8 +137,17 @@ document.addEventListener('DOMContentLoaded', function () {
             month: 'long',
         },
     });
-    smallCalendar.render();
+  smallCalendar.render();
+  addCustomButtonWrapper();
 });
+
+const addCustomButtonWrapper = () => {
+  const customTrainingCalendarButton = document.querySelector(
+    ".fc-myTrainingCalendar-button"
+  );
+
+  customTrainingCalendarButton.parentElement.classList.add('header-start-wrapper')
+}
 
 
 const mockup = [
