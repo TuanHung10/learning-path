@@ -125,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function () {
         initialView: 'dayGridMonth',
         firstDay: 1,
         height: 'auto',
-        // dayCellContent: function (e) { e.dayNumberText = e.dayNumberText.replace(/(\d+)/, '<span class="small-day-number">$1</span>'); },
         themeSystem: 'bootstrap',
         views: {},
         headerToolbar: {

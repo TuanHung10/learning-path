@@ -626,3 +626,8 @@ body {
   margin: 0;
   box-shadow: 4px 4px 8px 0px rgba(64, 134, 245, 0.50)
 }
+
+
+.fc-scroller.fc-scroller-liquid-absolute {
+  overflow-y: auto !important;
+}
