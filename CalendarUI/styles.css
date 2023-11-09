@@ -258,7 +258,7 @@ body {
   border-radius: 8px;
 }
 
-.right-calendar .fc-day-today > * {
+.right-calendar .fc-day-today>* {
   color: #fff !important;
 }
 
@@ -281,7 +281,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height:100%;
+  height: 100%;
 }
 
 .event-title {
@@ -389,7 +389,7 @@ body {
   line-height: 130%;
 }
 
-.join-btn {
+.course-form-btn {
   height: 40px;
   background-color: #4086F5;
   color: #ffffff;
@@ -503,7 +503,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 8px;
-  background-color: rgba(173, 255, 47, 0.5);
+  background-color: rgba(48, 170, 81, 0.50);
 }
 
 .fc-timeGridDay-view .fc-daygrid-event-harness::after,
@@ -528,13 +528,13 @@ body {
   font-size: 13px;
   font-weight: 400;
   line-height: 22px;
-  
+
 }
 
 /* Style custom button wrapper */
 .header-start-wrapper {
   display: flex;
-  align-items: center;  
+  align-items: center;
 }
 
 /* Right content */
@@ -557,7 +557,7 @@ body {
   background-color: white;
 }
 
-#small-calendar .fc-dayGridMonth-view .fc-scrollgrid  {
+#small-calendar .fc-dayGridMonth-view .fc-scrollgrid {
   border: none !important;
 }
 
@@ -622,7 +622,7 @@ body {
   padding-top: 8px;
 }
 
-.join-btn {
+.course-form-btn {
   margin: 0;
   box-shadow: 4px 4px 8px 0px rgba(64, 134, 245, 0.50)
 }
@@ -630,4 +630,54 @@ body {
 
 .fc-scroller.fc-scroller-liquid-absolute {
   overflow-y: auto !important;
+}
+
+/* Add this to your existing CSS file or within a <style> tag in your HTML */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  color: #333;
 }
