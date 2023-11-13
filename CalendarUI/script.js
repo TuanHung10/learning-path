@@ -93,13 +93,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="event-title">${arg.event.title}</div>
                 <div>
                     <div class="custom-event event-time"><div class='icon'></div>${arg.event.start
-                      .toTimeString()
-                      .substring(0, 5)} - ${arg.event.end
-          .toTimeString()
-          .substring(0, 5)}</div>
-                    <div class="custom-event event-location"><div class='icon'></div>${
-                      arg.event.extendedProps.location
-                    }</div>
+            .toTimeString()
+            .substring(0, 5)} - ${arg.event.end
+              .toTimeString()
+              .substring(0, 5)}</div>
+                    <div class="custom-event event-location"><div class='icon'></div>${arg.event.extendedProps.location
+          }</div>
                 </div>
                 `;
       }
@@ -326,21 +325,21 @@ const mockup = [
   },
   {
     title: "Workshop",
-    date: "2023-11-01",
+    date: "2023-11-05",
     startTime: "11:00",
     endTime: "18:00",
     location: "Workshop Hall",
   },
   {
     title: "Workshop",
-    date: "2023-11-01",
+    date: "2023-11-05",
     startTime: "13:00",
     endTime: "16:00",
     location: "Workshop Hall",
   },
   {
     title: "Workshop",
-    date: "2023-11-01",
+    date: "2023-11-05",
     startTime: "12:00",
     endTime: "15:00",
     location: "Workshop Hall",
