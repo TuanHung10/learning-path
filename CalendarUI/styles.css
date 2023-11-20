@@ -1,19 +1,19 @@
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 .fc-button::first-letter {
   text-transform: capitalize;
 }
 
-body {
+/* body {
   font-family: "Arial", sans-serif;
   background-color: #f7f7f7;
   margin: 0;
   width: 100%;
   overflow-x: hidden;
   min-height: 100vh;
-}
+} */
 
 #calendar {
   /* max-width: 900px; */
@@ -128,11 +128,11 @@ body {
   opacity: 1 !important;
 }
 
-.fc-today-button ~ .fc-button-group {
+.fc-today-button~.fc-button-group {
   background: #f0f0f0;
 }
 
-.fc-toolbar-title ~ .fc-button {
+.fc-toolbar-title~.fc-button {
   display: none !important;
 }
 
@@ -269,13 +269,13 @@ body {
 }
 
 .right-calendar .fc-day-today {
-  background-color: #0050ae !important;
+  background-color: #F0F0F0;
   border-radius: 8px;
 }
 
-.right-calendar .fc-day-today > * {
+/* .right-calendar .fc-day-today>* {
   color: #fff !important;
-}
+} */
 
 .fc-scroller {
   overflow: unset !important;
@@ -376,7 +376,7 @@ body {
   gap: 10px;
 }
 
-.event-card > h2 {
+.event-card>h2 {
   color: #4086f5;
   font-size: 20px;
   font-weight: 700;
@@ -424,7 +424,7 @@ body {
   flex-wrap: wrap;
 }
 
-.event-details > div {
+.event-details>div {
   width: 50%;
   display: flex;
   align-items: center;
@@ -748,7 +748,7 @@ body {
   padding: 16px 0;
 }
 
-.custom-modal-content + .custom-modal-content {
+.custom-modal-content+.custom-modal-content {
   border-top: 1px solid rgba(102, 102, 102, 0.2);
 }
 
@@ -775,7 +775,7 @@ body {
   align-items: center;
 }
 
-.custom-modal-info + .custom-modal-info {
+.custom-modal-info+.custom-modal-info {
   padding-top: 8px;
 }
 

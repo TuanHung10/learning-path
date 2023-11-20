@@ -1,3 +1,25 @@
+function setupSmallCalendarDayClick(smallCalendar, mainCalendar) {
+  // Get all the day elements in the small calendar
+  var smallCalendarDays = smallCalendarEl.getElementsByClassName('fc-daygrid-day');
+
+  // Add a click event listener to each day
+  for (var day of smallCalendarDays) {
+    day.addEventListener('click', function () {
+      // Extract the date from the data-date attribute of the clicked cell
+      var date = this.getAttribute('data-date');
+
+      // Change the main calendar's view to 'timeGridDay' or 'dayGridDay' (whichever you're using)
+      mainCalendar.changeView('timeGridDay', date);
+
+      // Alternatively, if you want to navigate to the date without changing the view, you could use:
+      // mainCalendar.gotoDate(date);
+
+      // Re-render the main calendar to show the new view
+      mainCalendar.render();
+    });
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   function dateHasMultipleEvents(date, events) {
     let count = 0;
@@ -176,10 +198,34 @@ document.addEventListener("DOMContentLoaded", function () {
       modal.style.display = "none";
     }
   };
-  calendar.render();
 
+  var lastClickedDateElement = null;
   var smallCalendarEl = document.getElementById("small-calendar");
   var smallCalendar = new FullCalendar.Calendar(smallCalendarEl, {
+    dateClick: function (info) {
+      calendar.changeView('timeGridDay', info.date);
+      if (lastClickedDateElement) {
+        lastClickedDateElement.style.removeProperty('background-color');
+        lastClickedDateElement.style.removeProperty('border-radius');
+        var lastClickedDateNumber = lastClickedDateElement.querySelector('.fc-daygrid-day-number');
+        if (lastClickedDateNumber) {
+          lastClickedDateNumber.style.color = '';
+        } else {
+          lastClickedDateElement.style.color = '';
+        }
+      }
+
+      info.dayEl.setAttribute('style', 'background-color: #0050AE !important; border-radius: 8px;');
+
+      var clickedDateNumber = info.dayEl.querySelector('.fc-daygrid-day-number');
+      if (clickedDateNumber) {
+        clickedDateNumber.style.color = '#fff';
+      } else {
+        info.dayEl.style.color = '#fff';
+      }
+
+      lastClickedDateElement = info.dayEl;
+    },
     initialView: "dayGridMonth",
     firstDay: 1,
     height: "auto",
@@ -192,6 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     titleFormat: {
       month: "long",
+      year: "numeric"
     },
     events: mockup.map((event) => ({
       start: event.date + "T" + event.startTime + ":00",
@@ -199,10 +246,12 @@ document.addEventListener("DOMContentLoaded", function () {
     })),
     eventClassNames: "sidebar-event",
   });
+  calendar.render();
   smallCalendar.render();
   addCustomButtonWrapper();
 
   handleSmallCalendarView();
+  setupSmallCalendarDayClick(smallCalendar, mainCalendar);
 });
 
 const addCustomButtonWrapper = () => {
