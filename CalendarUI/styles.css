@@ -273,6 +273,15 @@
   border-radius: 8px;
 }
 
+.right-calendar .fc-daygrid-day.custom-today {
+  background-color: #0050AE !important;
+  border-radius: 8px;
+}
+
+.right-calendar .fc-daygrid-day.custom-today .fc-daygrid-day-number {
+  color: #fff !important;
+}
+
 /* .right-calendar .fc-day-today>* {
   color: #fff !important;
 } */
