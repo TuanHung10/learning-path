@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
       backgroundColor: "#e5f4e9",
       textColor: "#000",
       location: event.location,
+      classNames: "language-event",
     })),
     eventContent: function (arg) {
       var div = document.createElement("div");
@@ -399,18 +400,20 @@ const mockup = [
     location: "Workshop Hall",
   },
   {
-    title: "Seminar: Risk Management",
+    title: "Language",
     date: "2023-11-09",
     startTime: "12:00",
     endTime: "15:00",
     location: "Workshop Hall",
+    topic: "language"
   },
   {
-    title: "Seminar: Risk Management",
+    title: "Seminar",
     date: "2023-11-10",
     startTime: "12:00",
     endTime: "15:00",
     location: "Workshop Hall",
+    topic: "training"
   },
   {
     title: "Seminar: Risk Management",
