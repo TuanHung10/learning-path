@@ -526,7 +526,8 @@
   position: absolute;
   inset: 0;
   border-radius: 8px;
-  background-color: rgba(48, 170, 81, 0.5);
+  background-color: rgba(0, 173, 64, 0.8);
+  box-shadow: 4px 4px 8px 0px rgba(48, 170, 81, 0.50);
 }
 
 .fc-timeGridDay-view .fc-daygrid-event-harness::after,
